@@ -1,0 +1,48 @@
+
+I have 3 example files currently
+cd examples
+ruby example1.rb
+ruby example2.rb
+ruby example3.rb
+
+Not Scenario yet complete due to first requirment being to filter data.
+The scenario will be in this file once complete. Currently loads data and initialise table.
+ruby scenario.rb
+
+To Complete:
+Not sure on the first 2, these are possible but require a fetch, map and save operation.
+
+- It should be possible to do all of the following row manipulations:
+   * Run a transformation on a row which changes its content
+     based on the return value of a block.
+     (Similar to Enumerable#map)
+
+- It should be possible to do all of the following column manipulations:
+    * Run a transformation on a column which changes its content
+      based on the return value of a block.
+
+
+b = table.fetch( 0 ).map! do |item|
+   item = item * 2
+end
+table.save_row( 0, b)
+
+
+cola = table.fetch_column( "third" ).map! do |item|
+   item = item * 2
+end
+table.save_column( "third", cola )
+
+
+
+These Requirments are not complete
+- It should be possible to do the following filtering:
+    * Reduce a table to contain only the rows that pass a conditional
+      block (similar to Enumerable#select)
+    * Reduce a table to contain only the columns that pass a
+      conditional block (similar to Enumerable#select)
+
+I understand filtering out some rows on the basis that they do not meet a requirment for a column. 
+I do not currently understand the scenario for a row passing a condition, stuck on the implementation.
+
+
