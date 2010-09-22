@@ -1,0 +1,51 @@
+Tabular::Table
+==============
+
+This project was originally written to complete the ASSIGNMENT as detailed in the ASSIGNMENT file.
+
+Quick Demo
+----------
+
+    require 'tabular'
+    table = Tabular::Table.new
+
+    table.append_row([1,2,3])
+    table.append_row([4,5,6])
+    table.append_row([7,8,9])
+
+    table.fetch( 0 ) 
+    #=> [1,2,3]
+
+    table.fetch(0, 1)
+    #=> 2
+
+    table.append_column( [4,7,0] )
+    # Table is now
+    # [ [1,2,3,4]
+    #   [4,5,6,7]
+    #   [7,8,9,0] ]
+
+    table.name_column(0, "first")
+    table.name_column(1, "second")
+    table.name_column(2, "third")
+    table.name_column(3, "fourth")
+
+    table.fetch_column( 1 )
+    #=> [2,5,8]
+
+    table.fetch_column( "second" )
+    #=> [2,5,8]
+
+    table.save_row(1, [9,9,9,9] )
+    # Table is now
+    # [ [1,2,3,4]
+    #   [9,9,9,9]
+    #   [7,8,9,0] ]
+
+    table.save_column("fourth", [1,2,3] )
+    # Table is now
+    # [ [1,2,3,1]
+    #   [9,9,9,2]
+    #   [7,8,9,3] ]
+
+
