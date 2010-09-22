@@ -1,6 +1,6 @@
 module Tabular
 
-   # A string representing the version of GitBadge.
+   # A string representing the version of Tabular.
    VERSION = "0.0.1"
 
 
