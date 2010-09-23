@@ -77,10 +77,10 @@ module Tabular
 
       def insert_column( pos, new_column)
 
-         @headers =  @headers[0...pos] + [pos.to_s] + @headers[pos...(@headers.size)]
+         @headers =  @headers[0...pos] + [pos.to_s] + @headers[pos..-1]
 
          @table.each_with_index do |row, ind|
-            @table[ind] = row[0...pos] + [new_column[ind]] + row[pos...(row.size)] 
+            @table[ind] = row[0...pos] + [new_column[ind]] + row[pos..-1] 
          end
       end
 
