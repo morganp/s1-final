@@ -18,7 +18,11 @@ module Tabular
          end
       end
 
-      def fetch_column( index )
+      def row_at( row )
+         @table[row]
+      end
+
+      def column_at( index )
          column_id = check_column_id( index )
          @table.inject([]) do |column, row|
             column << row[column_id]
