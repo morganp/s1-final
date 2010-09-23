@@ -48,6 +48,16 @@ module Tabular
          @table.delete_at( index )
       end
 
+      def map_row( index )
+         @table[index].map do |item|
+            yield item
+         end
+      end
+
+      def map_row!( index, &block )
+         @table[index] = map_row( index, &block )
+      end
+
 
       # Mixin in .map
       # http://ruby-doc.org/docs/ProgrammingRuby/html/tut_modules.html
@@ -102,7 +112,19 @@ module Tabular
          end
       end
 
-      
+      def map_column( index )
+
+         column_at(index).map do |item|
+            yield item
+         end
+      end
+
+      def map_column!( index, &block )
+         col = map_column( index, &block )
+         save_column( index, col )
+         #Add return col here so it returns the same as map_column
+         return col
+      end  
 
       private
 
