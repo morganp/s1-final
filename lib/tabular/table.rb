@@ -138,17 +138,16 @@ module Tabular
 
       def init_headers( headers )
          #Strip header names from table
-         if headers.class == TrueClass
-            new_headers = rm_row( 0 )
-         end  
-
-         #Headers supplied as seperate array
-         if headers.class == Array
+         case headers
+         when true
+            new_headers = delete_row( 0 )
+         when Array
             new_headers = headers
+         when nil
+            new_headers = []
+         else
+            raise ArgumentError
          end
-
-         #Catch all for un-initialized headers
-         return new_headers ||= []
       end
       
       #The method that does all the work for append and insert rows.
@@ -158,12 +157,13 @@ module Tabular
 
       # check for ordinal (integer) or named Column refference
       def check_column_id( id )
-         if id.class == Fixnum
+         case id
+         when Fixnum
             return id
-         end
-
-         if id.class == String
+         when String
             return @headers.index( id )
+         else
+            raise ArgumentError
          end
       end
 
