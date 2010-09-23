@@ -54,7 +54,7 @@ module Tabular
       # Deligating each method from
       # http://snippets.dzone.com/posts/show/8247
       def each( &blk )
-         @data.each( &blk )
+         @table.each( &blk )
       end
 
       def map!( &blk )
