@@ -13,7 +13,7 @@ Quick Demo
     table.append_row([4,5,6])
     table.append_row([7,8,9])
 
-    table.fetch( 0 ) 
+    table.row_at( 0 ) 
     #=> [1,2,3]
 
     table.fetch(0, 1)
@@ -30,10 +30,10 @@ Quick Demo
     table.name_column(2, "third")
     table.name_column(3, "fourth")
 
-    table.fetch_column( 1 )
+    table.column_at( 1 )
     #=> [2,5,8]
 
-    table.fetch_column( "second" )
+    table.column_at( "second" )
     #=> [2,5,8]
 
     table.save_row(1, [9,9,9,9] )
