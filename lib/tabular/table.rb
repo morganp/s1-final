@@ -58,6 +58,13 @@ module Tabular
          @table[index] = map_row( index, &block )
       end
 
+      def select_row( &block )
+         @table.select( &block )
+      end
+
+      def select_row!( &block )
+         @table = select_row( &block )
+      end
 
       # Mixin in .map
       # http://ruby-doc.org/docs/ProgrammingRuby/html/tut_modules.html
@@ -113,7 +120,6 @@ module Tabular
       end
 
       def map_column( index )
-
          column_at(index).map do |item|
             yield item
          end
@@ -126,6 +132,23 @@ module Tabular
          return col
       end  
 
+      def select_column( index, &block )
+         column_id = check_column_id( index )
+
+         #create new table containing only valid rows
+         @table.inject([]) do |new_table, row|
+            if block.call( row[column_id] )
+               row
+            end
+         end
+      end
+
+      def select_column!( index, &block )
+         @table = select_column( index, &block )
+      end
+
+
+      ###################################
       private
 
       def init_table( table )
