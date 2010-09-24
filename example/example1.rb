@@ -24,9 +24,9 @@ table.save_row( 0, [1,2,3] )
 pp table
 
 
-puts "\nRetrieve data via fetch"
-pp table.fetch(1)
-pp table.fetch(1,1)
+puts "\nRetrieve data via []"
+pp table[1]
+pp table[1,1]
 
 puts "\nRetrieve data via row_at"
 pp table.row_at(1)
