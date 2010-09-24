@@ -5,6 +5,9 @@ require 'pp'
 table = Tabular::Table.new([["a","b","c"],[1,2,3],[4,5,6],[7,8,9]], true)
 pp table
 
+puts "\ntry to_a should include headers"
+pp table.to_a
+
 puts "\nselect_row on table"
 tab = table.select_row do |x|
    (x.size==3) and (x[1] > 3)

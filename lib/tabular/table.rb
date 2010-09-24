@@ -29,6 +29,10 @@ module Tabular
          end
       end
 
+      def to_a
+         [@headers] + @table
+      end
+
       ###########################################
       ## ROW Modification Methods
       ###########################################
