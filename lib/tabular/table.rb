@@ -142,7 +142,9 @@ module Tabular
          #create new table containing only valid rows
          @table.inject([]) do |new_table, row|
             if block.call( row[column_id] )
-               row
+               new_table << row 
+            else 
+               new_table
             end
          end
       end
