@@ -16,8 +16,9 @@ puts "\nSave column 2 [3,6,9]"
 table.save_column(2, [3,6,9] )
 pp table
 
-puts "Retrieve data via named fetch"
-pp table.fetch(1,"second")
+puts "\nRetrieve data via named [1, \"second\"]"
+pp table[1,"second"]
+
 
 puts "\nRetrieve data via column_at, with integer index then named"
 pp table.column_at( 0 )
