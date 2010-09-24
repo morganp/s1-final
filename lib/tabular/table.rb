@@ -140,13 +140,11 @@ module Tabular
          column_id = check_column_id( index )
 
          #create new table containing only valid rows
-         @table.inject([]) do |new_table, row|
-            if block.call( row[column_id] )
-               new_table << row 
-            else 
-               new_table
-            end
+         new_table = []
+         @table.each do |row|
+             new_table << row if block.call( row[column_id] )
          end
+         return new_table
       end
 
       def select_column!( index, &block )
