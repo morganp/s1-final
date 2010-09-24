@@ -8,7 +8,7 @@ module Tabular
          @headers = init_headers( headers )
       end
 
-      def fetch(row, column=nil)
+      def [](row, column=nil)
          # If only row supplied return entire row 
          if column.nil?
             @table[row]
