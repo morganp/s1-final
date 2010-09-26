@@ -40,25 +40,3 @@ end
 pp d
 pp table
 
-
-#b = table.fetch( 0 ).map! do |item|
-#   item = item * 2
-#end
-#table.save_row( 0, b)
-#
-#pp table
-#
-#pp table.column_at( "first" )
-#pp table.column_at( 1 )
-#
-#cola = table.fetch_column( "third" ).map! do |item|
-#   item = item * 2
-#end
-#table.save_column( "third", cola )
-#
-#puts
-#puts "Ran map on third column"
-#pp table
-#
-
-
