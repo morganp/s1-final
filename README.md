@@ -52,9 +52,9 @@ Further Examples
 ----------------
 
 cd examples  
-example1.rb, details use of row methods   
-example2.rb, details use of column methods  
-example3.rb, details map_row and map_column methods  
-example4.rb, details select_row and select_column methods  
+example1.rb, details use of row methods.   
+example2.rb, details use of column methods.  
+example3.rb, details map_row and map_column methods.  
+example4.rb, details select_row and select_column methods.  
 
 
