@@ -16,7 +16,7 @@ Quick Demo
     table.row_at( 0 ) 
     #=> [1,2,3]
 
-    table.fetch(0, 1)
+    table[0, 1]
     #=> 2
 
     table.append_column( [4,7,0] )
