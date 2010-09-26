@@ -20,7 +20,7 @@ require 'pp'
 
 data = YAML::load_file('../data/s1-exam-data.yaml')
 
-#Load data With Headers
+#Load data with headers
 table = Tabular::Table.new( data, true)
 
 #Limit table to June of 2006 
